@@ -27,7 +27,7 @@ window.onresize = resizeBanner;
 resizeBanner();  // Call the function on page load to set the banner size
 
 // Cart Icon Counter Update
-let cartItemsCount = 2;  // You can update this count dynamically later
+let cartItemsCount = 3;  // You can update this count dynamically later
 const cartIcon = document.querySelector('.cart-icon');
 
 function updateCartCount(count) {
