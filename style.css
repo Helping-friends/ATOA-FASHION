@@ -3,11 +3,8 @@ html{
     width: 99%;
 }
 
-#add-cart-btn{
-    background-color: black;
-    border-radius: 10px;
-    height: 10px;
-    width: 20px;
+#cart-btn{
+    font-size: xx-small;
 }
 
 .top {
@@ -33,7 +30,7 @@ a {
 }
 
 a :hover {
-   font-size: 30px;
+   font-size: 20px;
    color: #000;
 }
 
@@ -42,4 +39,12 @@ a :hover {
     margin-bottom: 10px;
     margin-left: 150px;
     margin-right: 50px;
+}
+
+.shirt {
+    display:block;
+}
+
+.pant {
+    display: block;
 }
