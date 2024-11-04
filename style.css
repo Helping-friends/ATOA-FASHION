@@ -3,7 +3,7 @@ html, body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 /* Header Styling */
@@ -14,12 +14,6 @@ header {
     padding: 10px 20px;
     background-color: white;
     border-bottom: 1px solid #ddd;
-}
-
-/* Logo Styling */
-.logo {
-    max-width: 100px;
-    height: auto;
 }
 
 /* Navigation Links */
@@ -33,6 +27,7 @@ header {
     color: black;
     font-size: 18px;
     padding: 10px;
+    transition: color 0.3s ease; /* Added transition for smooth hover effect */
 }
 
 .header-center a:hover {
@@ -68,17 +63,6 @@ header {
     line-height: 20px;
     font-size: 12px;
 }
-.cart-badge {
-    position: absolute;
-    top: -10px;
-    right: -10px;
-    background-color: red;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 50%;
-    font-size: 14px;
-}
-
 
 /* Banner Styling */
 .banner img {
@@ -92,14 +76,38 @@ header {
 footer {
     text-align: center;
     padding: 20px;
+    background-color: #f1f1f1;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+footer ul li {
+    display: inline;
+    margin: 0 10px;
 }
 
 footer a {
     padding: 10px;
     color: black;
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 footer a:hover {
     color: darkgray;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 600px) {
+    .header-center {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .header-center a {
+        font-size: 16px;
+    }
 }
