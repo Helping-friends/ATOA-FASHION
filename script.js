@@ -1,5 +1,3 @@
-// script.js
-
 // Function to display a greeting when the page loads
 window.onload = function() {
     alert("Welcome to ATOA Fashion!");
@@ -25,7 +23,18 @@ function resizeBanner() {
         bannerImage.style.width = "90%";
     }
 }
-
 window.onresize = resizeBanner;
 resizeBanner();  // Call the function on page load to set the banner size
 
+// Cart Icon Counter Update
+let cartItemsCount = 2;  // You can update this count dynamically later
+const cartIcon = document.querySelector('.cart-icon');
+
+function updateCartCount(count) {
+    const cartBadge = document.createElement('span');
+    cartBadge.classList.add('cart-badge');
+    cartBadge.textContent = count;  // Update the cart count display
+    cartIcon.appendChild(cartBadge);
+}
+
+updateCartCount(cartItemsCount);  // Initial call to show the cart count
