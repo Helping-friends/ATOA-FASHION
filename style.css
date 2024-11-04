@@ -4,6 +4,7 @@ html, body {
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
+    background-color: #E3EFD3;  /* Light background for the entire page */
 }
 
 /* Header Styling */
@@ -12,8 +13,8 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: white;
-    border-bottom: 1px solid #ddd;
+    background-color: #0D2B1D;  /* Dark green for the header */
+    border-bottom: 1px solid #AEC3B0;  /* Accent with medium green */
 }
 
 /* Navigation Links */
@@ -24,14 +25,14 @@ header {
 
 .header-center a {
     text-decoration: none;
-    color: black;
+    color: #E3EFD3;  /* Light green for text */
     font-size: 18px;
     padding: 10px;
-    transition: color 0.3s ease; /* Added transition for smooth hover effect */
+    transition: color 0.3s ease; /* Smooth hover effect */
 }
 
 .header-center a:hover {
-    color: darkgray;
+    color: #6B8F71;  /* Mid-tone green for hover */
 }
 
 /* Right Section (Icons) */
@@ -43,6 +44,7 @@ header {
 .cart-icon, .icon {
     width: 30px;
     height: 30px;
+    color: #E3EFD3;  /* Icon color matches the light text */
 }
 
 .cart-icon {
@@ -50,11 +52,11 @@ header {
 }
 
 .cart-icon::after {
-    content: '2'; /* Example for cart items count */
+    content: '2';  /* Example cart items count */
     position: absolute;
     top: -5px;
     right: -5px;
-    background-color: red;
+    background-color: #345635;  /* Darker green badge */
     color: white;
     border-radius: 50%;
     width: 20px;
@@ -70,13 +72,14 @@ header {
     height: auto;
     display: block;
     margin: 0 auto;
+    border: 2px solid #6B8F71;  /* Medium green border for the banner */
 }
 
 /* Footer Styling */
 footer {
     text-align: center;
     padding: 20px;
-    background-color: #f1f1f1;
+    background-color: #0D2B1D;  /* Dark green for footer */
 }
 
 footer ul {
@@ -91,13 +94,13 @@ footer ul li {
 
 footer a {
     padding: 10px;
-    color: black;
+    color: #E3EFD3;  /* Light green for footer links */
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 footer a:hover {
-    color: darkgray;
+    color: #AEC3B0;  /* Medium green on hover */
 }
 
 /* Responsive Media Queries */
