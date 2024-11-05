@@ -8,7 +8,7 @@
 body {
     min-height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                url('https://images.pexels.com/photos/3768005/pexels-photo-3768005.jpeg?cs=srgb&dl=pexels-willoworld-3768005.jpg&fm=jpg');
+                url(https://images.unsplash.com/photo-1490481651871-ab68de25d43d');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
