@@ -532,7 +532,7 @@
 		"ghcr.io/davzucky/devcontainers-features-wolfi/user:1": {},
 		"features": {
     "ghcr.io/devcontainers/features/nvidia-cuda:1": {},
-    "ghcr.io/iterative/features/nvtop:1": {},
+    "ghcr.io/iterative/features/nvtop:1": {}
 	}
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
@@ -543,7 +543,8 @@
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "yarn install",
-	"postCreateCommand": "sudo apt-get update && sudo apt-get install -y nvpm",
+	"postCreateCommand": "sudo apt-get update && sudo apt-get install -y nvpm || echo 'nvpm not found in repositories'",
+
 
 
 	// Configure tool-specific properties.
