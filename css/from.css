@@ -8,11 +8,14 @@
 body {
     min-height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d');
+                url('https://images.pexels.com/photos/1884581/pexels-photo-1884581.jpeg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+            url('https://images.pexels.com/photos/1884581/pexels-photo-1884581.jpeg');
 }
+
 
 .container {
     width: 100%;
