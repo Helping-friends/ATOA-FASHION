@@ -1,111 +1,142 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 
-*:focus{
-    outline: none;
+body {
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url('https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
-body{
-    position: relative;
+.container {
     width: 100%;
     min-height: 100vh;
-    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url('../img/bg.png');
-    background-size: cover;
-    background-position: center;
-    font-family: 'roboto', sans-serif;
+    padding: 20px;
 }
 
-.form{
-    width: 400px;
-    height: auto;
-    color: #fff;
-    font-family: 'roboto', sans-serif;
+.form-container {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 30px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
-.heading{
-    opacity: 0;
-    text-transform: capitalize;
+h1 {
     text-align: center;
-    font-size: 80px;
-    font-weight: 300;
-    margin-bottom: 50px;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 28px;
 }
 
-input,
-.submit-btn{
-    opacity: 0;
-    width: 80%;
-    height: 35px;
-    display: block;
-    margin: 20px auto;
+.input-group {
+    margin-bottom: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
     border-radius: 5px;
-    background: rgba(255, 255, 255, 0.3);
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    border-color: #0D2B1D;
+    outline: none;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background: #0D2B1D;
+    color: white;
     border: none;
-    color: #fff;
-    padding: 15px;
-    transition: .5s;
-    text-transform: capitalize;
-}
-
-input::placeholder{
-    color: #fff;
-}
-
-input:focus,
-.submit-btn:hover{
-    background: #fff;
-    color: #000;
-}
-
-input:focus::placeholder{
-    color: #000;
-}
-
-.submit-btn{
-    width: auto;
-    padding: 0 20px;
+    border-radius: 5px;
+    font-size: 16px;
     cursor: pointer;
-    margin: 50px auto 0;
-    opacity: 0;
+    transition: background 0.3s ease;
 }
 
-.link{
-    opacity: 0;
+.submit-btn:hover {
+    background: #1a4230;
+}
+
+.form-link {
     text-align: center;
-    text-transform: capitalize;
-    color: rgba(255, 255, 255, 0.5);
+    margin-top: 20px;
+    color: #666;
+}
+
+.form-link a {
+    color: #0D2B1D;
+    text-decoration: none;
+}
+
+.form-link a:hover {
+    text-decoration: underline;
+}
+
+.home-link {
     display: block;
-    margin: 30px auto;
-}
-
-.link:hover{
-    color: #fff;
-}
-
-.alert-box{
-    position: absolute;
-    top: -100%;
-    left: 50%;
-    transform: translateX(-50%);
-    min-width: 150px;
-    max-width: 90%;
-    width: auto;
-    height: auto;
-    padding: 10px;
-    text-transform: capitalize;
-    background: rgb(255, 119, 119);
-    border-top: 10px solid rgb(255, 37, 37);
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    color: #fff;
-    font-family: 'roboto', sans-serif;
     text-align: center;
-    transition: 1s;
+    margin-top: 20px;
+    color: #666;
+    text-decoration: none;
+}
+
+.home-link:hover {
+    color: #0D2B1D;
+}
+
+.alert-box {
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    display: none;
+}
+
+.alert-box.error {
+    display: block;
+    background: #ffebee;
+    color: #c62828;
+    border: 1px solid #ffcdd2;
+}
+
+.alert-box.success {
+    display: block;
+    background: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #c8e6c9;
+}
+
+@media (max-width: 480px) {
+    .form-container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    input {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+
+    .submit-btn {
+        padding: 10px;
+        font-size: 14px;
+    }
 }
