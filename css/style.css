@@ -16,7 +16,7 @@ header {
     background-color: #ffffff;  /* Dark green for the header */
     border-bottom: 1px solid #dbdbdb;  /* Accent with medium green */
 }
-
+/* Theere will be a chrme to phone order opition dosen't work with sifat*/
 /* Navigation Links */
 .header-center {
     display: flex;
