@@ -4,7 +4,7 @@ html, body {
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
-    background-color: #E3EFD3;  /* Light background for the entire page */
+    background-color: #ffffff;  /* Light background for the entire page */
 }
 
 /* Header Styling */
@@ -13,7 +13,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #0D2B1D;  /* Dark green for the header */
+    background-color: #ffffff;  /* Dark green for the header */
     border-bottom: 1px solid #AEC3B0;  /* Accent with medium green */
 }
 
@@ -21,7 +21,6 @@ header {
 .header-center {
     display: flex;
     gap: 20px;
-    background-color: white;
 }
 
 .header-center a {
