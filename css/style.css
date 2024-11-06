@@ -79,7 +79,7 @@ header {
 footer {
     text-align: center;
     padding: 20px;
-    background-color: #0D2B1D;  /* Dark green for footer */
+    background-color: #000000;  /* Dark green for footer */
 }
 
 footer ul {
