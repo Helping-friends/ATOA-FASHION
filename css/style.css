@@ -21,11 +21,12 @@ header {
 .header-center {
     display: flex;
     gap: 20px;
+    background-color: white;
 }
 
 .header-center a {
     text-decoration: none;
-    color: #E3EFD3;  /* Light green for text */
+    color: #000000;  /* Light green for text */
     font-size: 18px;
     padding: 10px;
     transition: color 0.3s ease; /* Smooth hover effect */
