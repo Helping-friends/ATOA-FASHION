@@ -52,4 +52,4 @@ const logoutBtn = document.getElementById('logout-btn');
 
 if (user) {
     loginLink.style.display = 'none'; // Hide login link
-   
+}
