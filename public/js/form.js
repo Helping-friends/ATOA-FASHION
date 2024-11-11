@@ -67,31 +67,35 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function handleRegister(name, email, password) {
-        // Here you would normally make an API call to your backend
-        // For demonstration, we'll use localStorage to simulate a database
-        const users = JSON.parse(localStorage.getItem('users')) || [];
-        
-        // Check if email already exists
-        if (users.some(user => user.email === email)) {
-            showAlert('Email already registered', 'error');
+        // Basic validation
+        if (!name || !email || !password) {
+            showAlert('Please fill in all fields', 'error');
             return;
         }
-
-        // Create new user
-        const newUser = {
-            name,
-            email,
-            password,
-            id: Date.now().toString()
-        };
-
-        users.push(newUser);
-        localStorage.setItem('users', JSON.stringify(users));
-        
-        showAlert('Registration successful!', 'success');
-        setTimeout(() => {
-            window.location.href = '/login';
-        }, 1500);
+    
+        // Send registration data to the backend
+        fetch('http://localhost:3000/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ name, email, password })
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Registration failed');
+            }
+            return response.text();
+        })
+        .then(message => {
+            showAlert(message, 'success');
+            setTimeout(() => {
+                window.location.href = '/login'; // Redirect to login page after successful registration
+            }, 1500);
+        })
+        .catch(error => {
+            showAlert(error.message, 'error');
+        });
     }
 
     function showAlert(message, type) {
@@ -112,4 +116,5 @@ document.addEventListener('DOMContentLoaded', () => {
             passwordField.type = 'password'; // Hide password
         }
     });
+    
 });
