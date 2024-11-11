@@ -44,3 +44,12 @@ function updateCartCount(count) {
 }
 
 updateCartCount(cartItemsCount);  // Initial call to show the cart count
+
+// Check if user is logged in
+const user = JSON.parse(sessionStorage.getItem('user'));
+const loginLink = document.getElementById('login-link');
+const logoutBtn = document.getElementById('logout-btn');
+
+if (user) {
+    loginLink.style.display = 'none'; // Hide login link
+}
