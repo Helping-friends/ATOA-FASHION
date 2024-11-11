@@ -103,4 +103,13 @@ document.addEventListener('DOMContentLoaded', () => {
     function isValidEmail(email) {
         return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     }
+    // Show/Hide Password Functionality
+    document.getElementById('show-password').addEventListener('change', function() {
+        const passwordField = document.getElementById('password');
+        if (this.checked) {
+            passwordField.type = 'text'; // Show password
+        } else {
+            passwordField.type = 'password'; // Hide password
+        }
+    });
 });
