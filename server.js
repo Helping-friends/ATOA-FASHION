@@ -12,7 +12,9 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Connect to MongoDB
-mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => console.log('MongoDB connected'))
+    .catch(err => console.log(err));
 
 // User Schema
 const userSchema = new mongoose.Schema({
@@ -106,4 +108,15 @@ app.post('/reset-password/:token', async (req, res) => {
     try {
         const { email } = jwt.verify(token, process.env.JWT_SECRET);
         const hashedPassword = await bcrypt.hash(password, 10);
-        await User.updateOne({ email }, { password: hashedPassword, resetToken
+        await User.updateOne({ email }, { password: hashedPassword, resetToken: null, resetTokenExpiry: null });
+        res.send('Password has been reset successfully!');
+    } catch (error) {
+        res.status(400).send('Invalid token');
+    }
+});
+
+// Start the server
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
