@@ -48,8 +48,78 @@ updateCartCount(cartItemsCount);  // Initial call to show the cart count
 // Check if user is logged in
 const user = JSON.parse(sessionStorage.getItem('user'));
 const loginLink = document.getElementById('login-link');
-const logoutBtn = document.getElementById('logout-btn');
+const logoutBtn = document.querySelector('.header-right'); // Updated selector
 
 if (user) {
+    // User is logged in
     loginLink.style.display = 'none'; // Hide login link
+    
+    // Add logout button if it doesn't exist
+    if (!document.getElementById('logout-btn')) {
+        const logoutButton = document.createElement('button');
+        logoutButton.id = 'logout-btn';
+        logoutButton.textContent = 'Logout';
+        logoutButton.className = 'logout-btn';
+        logoutButton.style.cssText = `
+            padding: 8px 16px;
+            background-color: #ff4444;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 10px;
+        `;
+        
+        // Add hover effect
+        logoutButton.onmouseover = () => {
+            logoutButton.style.backgroundColor = '#cc0000';
+        };
+        logoutButton.onmouseout = () => {
+            logoutButton.style.backgroundColor = '#ff4444';
+        };
+        
+        // Add logout functionality
+        logoutButton.addEventListener('click', () => {
+            // Clear session storage
+            sessionStorage.removeItem('user');
+            
+            // Show a logout message
+            alert('You have been successfully logged out!');
+            
+            // Redirect to home page or login page
+            window.location.href = '/login.html';
+        });
+        
+        logoutBtn.appendChild(logoutButton);
+    }
+} else {
+    // User is not logged in
+    if (loginLink) {
+        loginLink.style.display = 'block'; // Show login link
+    }
+    // Remove logout button if it exists
+    const existingLogoutBtn = document.getElementById('logout-btn');
+    if (existingLogoutBtn) {
+        existingLogoutBtn.remove();
+    }
 }
+
+// Add event listener for page load to check login status
+window.addEventListener('load', () => {
+    // Check if user is logged in
+    const user = JSON.parse(sessionStorage.getItem('user'));
+    const headerRight = document.querySelector('.header-right');
+    
+    if (user) {
+        // Update header to show user info
+        const userInfo = document.createElement('span');
+        userInfo.className = 'user-info';
+        userInfo.style.cssText = `
+            margin-right: 15px;
+            color: #333;
+            font-size: 14px;
+        `;
+        userInfo.textContent = `Welcome, ${user.name}`;
+        headerRight.insertBefore(userInfo, headerRight.firstChild);
+    }
+});
