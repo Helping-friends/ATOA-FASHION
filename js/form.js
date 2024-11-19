@@ -1,3 +1,7 @@
+window.onload = () => {
+    alert("Welcome to ATOA Fashion Login/ Rgister Page! We Are Sorry! Our for got password dosenot work/ please check back again.");
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.querySelector('.form');
     const submitBtn = document.querySelector('.submit-btn');
