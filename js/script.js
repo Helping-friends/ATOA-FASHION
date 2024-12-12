@@ -2,7 +2,7 @@
 window.onload = () => {
     alert("Welcome to ATOA Fashion! We Are Sorry! This page is under maintenance. But we will be back soon");
 }
-window.load = () => {
+window.onload = () => {
     alert("Please visit us back!!")
 }
 
