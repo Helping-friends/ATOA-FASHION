@@ -1,6 +1,9 @@
 // Function to display a greeting when the page loads
 window.onload = () => {
-    alert("Welcome to ATOA Fashion! We Are Sorry! This page is under maintenance.");
+    alert("Welcome to ATOA Fashion! We Are Sorry! This page is under maintenance. But we will be back soon");
+}
+window.load = () => {
+    alert("Please visit us back!!")
 }
 
 // Function to change the text color of links when hovered over
